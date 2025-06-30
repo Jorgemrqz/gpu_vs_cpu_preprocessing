@@ -1,12 +1,13 @@
 all:
-	g++ superres_cpu.cpp --std=c++17 `pkg-config --cflags --libs opencv4` -o cpu_app
-	g++ superres_gpu.cpp --std=c++17 `pkg-config --cflags --libs opencv4` -o gpu_app
+
+	g++ superres_cpu.cpp --std=c++17 `pkg-config --cflags --libs opencv4` -o bin/cpu_bin
+	g++ superres_gpu.cpp --std=c++17 `pkg-config --cflags --libs opencv4` -o bin/gpu_bin
 
 run_cpu:
-	./cpu_app
+	./bin/cpu_bin
 
 run_gpu:
-	./gpu_app
+	./bin/gpu_bin
 
 run_both:
-	./cpu_app & ./gpu_app
+	./bin/cpu_bin & ./bin/gpu_bin
